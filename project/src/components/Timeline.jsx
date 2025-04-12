@@ -2,26 +2,26 @@ import { motion } from 'framer-motion';
 
 const timelineEvents = [
   {
-    year: "2023",
-    title: "Senior Designer",
+    year: "Sept. 2022",
+    title: "Joined VIT",
     company: "Tech Innovation Labs",
-    description: "Leading design systems and user experience for enterprise clients"
+    description: "Started my higher studies at VIT Vellore"
   },
   {
-    year: "2021",
-    title: "UI/UX Designer",
+    year: "Mar. 2023",
+    title: "Started Learning Web Development",
     company: "Creative Studio",
-    description: "Designed and developed responsive web applications"
+    description: "Ventured into the world of Web Development, starting with HTML/CSS"
   },
   {
-    year: "2019",
-    title: "Frontend Developer",
+    year: "Jun. 2024",
+    title: "Intern at Siemens Energy, Vadodara",
     company: "Digital Agency",
     description: "Built interactive websites and web applications"
   },
   {
-    year: "2018",
-    title: "Junior Designer",
+    year: "Feb. 2025",
+    title: "Building the official website for International Test Conference India 2025 ",
     company: "Startup Inc",
     description: "Started career in web design and development"
   }
@@ -70,8 +70,8 @@ export const Timeline = () => {
                   {event.year}
                 </span>
                 <h3 className="text-2xl font-bold text-blue-700 mb-2">{event.title}</h3>
-                <h4 className="text-lg text-blue-600 mb-2">{event.company}</h4>
-                <p className="text-gray-500">{event.description}</p>
+                
+                <p className="text-blue-500">{event.description}</p>
               </div>
 
               {/* Spacer for opposite side */}

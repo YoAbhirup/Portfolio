@@ -42,8 +42,8 @@ const skills = [
 
 export const Skills = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center p-8 bg-black">
-      <div className="max-w-6xl w-full">
+    <section className="min-h-screen flex items-center justify-center bg-black">
+      <div className="max-w-6xl flex flex-col items-center w-full">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export const Skills = () => {
         >
           Skills
         </motion.h2>
-        <div className='grid grid-cols-6 ml-12 mr-12'>
+        <div className='grid gap-x-24 lg:grid-cols-6 grid-cols-2 md:grid-cols-4 md:ml-12 md:mr-12 ml-24 mr-24'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -169,8 +169,7 @@ export const Skills = () => {
             before:animate-[glow_2s_ease-in-out_infinite]"
         > <svg fill="#0d28f2" className='w-[100px]'  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 312.553 312.553" xml:space="preserve" stroke="#0d28f2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M302.553,0H10C4.477,0,0,4.478,0,10v292.553c0,5.522,4.477,10,10,10h292.553c5.523,0,10-4.478,10-10V10 C312.553,4.478,308.076,0,302.553,0z M122.031,193.288c-9.481,8.296-21.592,12.865-34.102,12.865 c-28.108,0-50.976-22.4-50.976-49.934c0-27.47,22.868-49.818,50.976-49.818c12.527,0,24.597,4.53,33.987,12.756 c3.874,3.392,4.263,9.283,0.87,13.156c-3.393,3.874-9.283,4.263-13.157,0.869c-5.988-5.245-13.695-8.135-21.7-8.135 c-17.827,0-32.33,13.983-32.33,31.172c0,17.251,14.503,31.286,32.33,31.286c7.992,0,15.742-2.931,21.822-8.251 c3.875-3.393,9.765-2.998,13.156,0.877C126.298,184.007,125.906,189.898,122.031,193.288z M185.951,165.6h-18.789v18.79 c0,5.149-4.174,9.323-9.324,9.323s-9.324-4.174-9.324-9.323V165.6h-18.788c-5.149,0-9.324-4.174-9.324-9.323 s4.174-9.323,9.324-9.323h18.788v-18.789c0-5.149,4.174-9.323,9.324-9.323s9.324,4.174,9.324,9.323v18.789h18.789 c5.149,0,9.324,4.174,9.324,9.323S191.101,165.6,185.951,165.6z M266.276,165.6h-18.789v18.79c0,5.149-4.174,9.323-9.324,9.323 c-5.149,0-9.324-4.174-9.324-9.323V165.6h-18.788c-5.149,0-9.324-4.174-9.324-9.323s4.174-9.323,9.324-9.323h18.788v-18.789 c0-5.149,4.174-9.323,9.324-9.323c5.149,0,9.324,4.174,9.324,9.323v18.789h18.789c5.149,0,9.324,4.174,9.324,9.323 S271.426,165.6,266.276,165.6z"></path> </g></svg>
            </motion.div>
-           </div>
-           <div className='flex flex-row justify-center gap-12 ml-12 mr-12'>
+           
            <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -273,6 +272,25 @@ export const Skills = () => {
             </g>
           </g>
         </svg>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20  }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        whileHover={{ 
+          y: -10,
+          boxShadow: '0 0 50px -5px rgba(245,135,4,0.6)'
+        }}
+        className="text-sm w-[125px] bg-gray-800 font-bold mb-16 text-center border-blue-200 p-2 
+          rounded-[5px] border-[5px] relative
+          shadow-[0_0_30px_-5px_rgba(245,135,4,0.3)]
+          transition-shadow duration-300 ease-in-out
+          before:absolute before:inset-0 before:rounded-sm
+          before:bg-gradient-to-r before:from-transparent before:via-orange-200/10 before:to-transparent
+          before:animate-[glow_2s_ease-in-out_infinite]"
+      >
+        <svg fill="#fd6330" className='w-[100px]' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" stroke="#ea4e1a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="5151e0c8492e5103c096af88a51fbe2a"> <path display="inline" d="M343.158,24.759l0.009-0.74c-0.096,0-0.191-0.004-0.287-0.004c-1.318,0-2.604,0.116-3.867,0.312 c-2.013,0.108-3.984,0.665-5.931,1.68c-14.695,6.03-26.281,25.28-40.275,48.589c-20.493,34.142-45.993,76.629-89.724,87.313 c-17.25,4.208-37.639,28.647-57.046,53.32c-1.771,2.245-3.402,4.316-4.857,6.138l-0.482,0.599L0.5,279.95l113.657,80.011 c47.719-22.41,62.32,20.51,101.834,128.024c79.515-8.925,132.87-136.009,177.182-144.359 c54.955-10.351,59.563,31.729,118.327,67.983C452.449,283.864,389.775,36.669,343.158,24.759z M172.019,316.313l-56.789,28.785 l-88.381-62.224L145.99,233.6l23.125,17.184l35.397,26.847C194.62,291.332,183.845,304.365,172.019,316.313z M212.078,266.797 l-35.264-26.206l-21.595-16.381c0.283-0.357,0.565-0.72,0.856-1.085c12.451-15.832,35.63-45.291,50.04-48.81 c40.188-9.817,65.588-41.959,85.416-73.182C272.418,149.307,248.71,212.35,212.078,266.797z"> </path> </g> </g></svg>
       </motion.div>
         
         </div>

@@ -58,6 +58,17 @@ function App() {
     };
   }, []);
 
+  const handleMenuClick = () => {
+    setIsOpen(!isOpen);
+    // Prevent body scroll when mobile menu is open
+    document.body.style.overflow = !isOpen ? 'hidden' : 'unset';
+  };
+
+  const handleMenuItemClick = () => {
+    setIsOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
   return (
     <>
     
@@ -75,72 +86,67 @@ function App() {
             
             <CustomCursor />
             
-            {/* Navigation */}
-            <div className='w-full flex justify-center '>
-            <nav className="bg-[#12121a] backdrop-blur-sm bg-opacity-80 fixed w-[50rem] rounded-b-md z-30">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-center h-20">
-                  {/* Desktop Menu */}
-                  <div className="hidden sm:flex sm:space-x-12">
-                    {menuItems.map((item) => (
-                      <motion.div
-                        key={item.name}
-                        className="relative inline-flex items-center"
-                        whileHover={{ y: -2 }}
-                      >
-                        <motion.a
-                          href={`#${item.id}`}
-                          className={`inline-flex items-center px-3 py-2 text-md font-medium relative group
-                            ${activeSection === item.name ? 'text-white' : 'text-gray-300 hover:text-white'}`}
-                          whileTap={{ scale: 0.95 }}
+            <div className='w-full flex justify-center fixed top-0 z-30'>
+              <nav className="bg-[#12121a] backdrop-blur-sm bg-opacity-80 w-full md:w-[50rem] rounded-b-md">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="flex items-center justify-between h-20">
+                    <div className="hidden md:flex md:space-x-8 mx-auto">
+                      {menuItems.map((item) => (
+                        <motion.div
+                          key={item.name}
+                          className="relative inline-flex items-center"
+                          whileHover={{ y: -2 }}
                         >
-                          {item.name}
-                          <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-orange-300 transform transition-transform duration-300
-                            ${activeSection === item.name ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-                        </motion.a>
-                      </motion.div>
+                          <motion.a
+                            href={`#${item.id}`}
+                            className={`inline-flex items-center px-3 py-2 text-md font-medium relative group
+                              ${activeSection === item.name ? 'text-white' : 'text-gray-300 hover:text-white'}`}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {item.name}
+                            <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-orange-300 transform transition-transform duration-300
+                              ${activeSection === item.name ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                          </motion.a>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <div className="md:hidden flex w-full justify-end">
+                      <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handleMenuClick}
+                        className="text-gray-300 hover:text-white p-2"
+                      >
+                        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                      </motion.button>
+                    </div>
+                  </div>
+                </div>
+
+                <motion.div
+                  initial={false}
+                  animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="md:hidden overflow-hidden bg-[#12121a] absolute w-full"
+                >
+                  <div className="px-2 pt-2 pb-3 space-y-1">
+                    {menuItems.map((item) => (
+                      <motion.a
+                        key={item.name}
+                        href={`#${item.id}`}
+                        className={`block px-3 py-2 rounded-md text-base font-medium 
+                          ${activeSection === item.name 
+                            ? 'text-white bg-[#1a1a24]' 
+                            : 'text-gray-300 hover:text-white hover:bg-[#1a1a24]'}`}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={handleMenuItemClick}
+                      >
+                        {item.name}
+                      </motion.a>
                     ))}
                   </div>
-
-                  {/* Mobile menu button */}
-                  <div className="flex items-center sm:hidden">
-                    <motion.button
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => setIsOpen(!isOpen)}
-                      className="text-gray-300 hover:text-white"
-                    >
-                      {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                    </motion.button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile menu */}
-              <motion.div
-                initial={false}
-                animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="sm:hidden overflow-hidden bg-[#12121a]"
-              >
-                <div className="px-2 pt-2 pb-3 space-y-1">
-                  {menuItems.map((item) => (
-                    <motion.a
-                      key={item.name}
-                      href={`#${item.id}`}
-                      className={`block px-3 py-2 rounded-md text-base font-medium 
-                        ${activeSection === item.name 
-                          ? 'text-white bg-[#1a1a24]' 
-                          : 'text-gray-300 hover:text-white hover:bg-[#1a1a24]'}`}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
-            </nav>
-
+                </motion.div>
+              </nav>
             </div>
 
             {/* Hero Section */}
