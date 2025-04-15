@@ -17,13 +17,13 @@ const timelineEvents = [
     year: "Jun. 2024",
     title: "Intern at Siemens Energy, Vadodara",
     company: "Digital Agency",
-    description: "Built interactive websites and web applications"
+    description: "Developed automation scripts using ExcelVBA for company projects"
   },
   {
     year: "Feb. 2025",
-    title: "Building the official website for International Test Conference India 2025 ",
+    title: "Building the official website for ITC India 2025 ",
     company: "Startup Inc",
-    description: "Started career in web design and development"
+    description: "Leading a team to develop the official website for International Test Conference 2025 India"
   }
 ];
 
